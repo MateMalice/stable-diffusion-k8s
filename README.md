@@ -1,6 +1,6 @@
 # Stable Diffusion on Kubernetes with Helm
 
-**NOTE: This fork is an updated version of [amithkk/stable-diffusion-k8s](https://github.com/amithkk/stable-diffusion-k8s) that uses the latest (as at 26 November 2023) Stable Diffusion web UI image and comes with more models than the previous version.** This fork does not build a custom image, but rather uses the latest version of the `tukirito/sygil-webui` image.
+#### NOTE: This fork is an updated version of [amithkk/stable-diffusion-k8s](https://github.com/amithkk/stable-diffusion-k8s) that uses the latest (as at 26 November 2023) Stable Diffusion web UI image and comes with more models than the previous version. This fork does not build a custom image, but rather uses the latest version of the `tukirito/sygil-webui` image.
 
 Run Stable Diffusion with companion models on a GPU-enabled Kubernetes Cluster - complete with the updated [StreamLit WebUI](https://github.com/Sygil-Dev/sygil-webui) and automatic model fetching for a 2 step install that takes less than 2 minutes (excluding download times).
 
@@ -26,6 +26,9 @@ Uses the already-configured `tukirito/sygil-webui` image.
 
 -   Add the helm repo with `helm repo add matemalice-sd https://matemalice.github.io/stable-diffusion-k8s`
 -   Fetch latest charts with `helm repo update`
+-   Make sure you have a StorageClass configured that can be used for persistent storage. Two persistent volumes are mounted:
+    -   One volume (with 20GB allocated to it by default) is for storing model files.
+    -   The second volume (default 10GB) is for storing output from generation tasks.
 -   (Optional) Create your own [`values.yaml`](./charts/stable-diffusion/values.yaml) with customized settings
     -   Some things that you might want to change could include the `nodeAffinity`, `cliArgs` (see below) and `ingress` settings (that will allow you to access this externally without needing to `kubectl port-forward`)
 -   Install with `helm install --generate-name amithkk-sd/stable-diffusion -f <your-values.yaml>`
