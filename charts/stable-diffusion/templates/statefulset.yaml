@@ -59,7 +59,7 @@ spec:
             - name: "STREAMLIT_SERVER_HEADLESS"
               value: "true"
             - name: "WEBUI_SCRIPT"
-              value: "webui_streamlit.py"
+              value: "webui_streamlit.py {{ .Values.webuiScriptArgs }}"
             - name: "VALIDATE_MODELS"
               value: {{ .Values.validateModels | quote }}
           ports:

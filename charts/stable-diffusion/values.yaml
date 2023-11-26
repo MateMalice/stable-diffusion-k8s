@@ -17,6 +17,9 @@ fullnameOverride: ""
 # If this is set to true, then models will be downloaded on launch - this is handled by the Stable Diffusion docker image. Otherwise, models must be downloaded manually.
 validateModels: false
 
+# Extra WebUI script args can be added here
+webUiScriptArgs: ""
+
 persistence:
   annotations: {}
   ## If defined, storageClass: <storageClass>
