@@ -31,7 +31,7 @@ Uses the already-configured `tukirito/sygil-webui` image.
     -   The second volume (default 10GB) is for storing output from generation tasks.
 -   (Optional) Create your own [`values.yaml`](./charts/stable-diffusion/values.yaml) with customized settings
     -   Some things that you might want to change could include the `nodeAffinity`, `cliArgs` (see below) and `ingress` settings (that will allow you to access this externally without needing to `kubectl port-forward`)
--   Install with `helm install --generate-name amithkk-sd/stable-diffusion -f <your-values.yaml>`
+-   Install with `helm install --generate-name matemalice-sd/stable-diffusion -f <your-values.yaml>`
 
 Wait for the containers to come up and follow the instructions returned by Helm to connect. This may take a while as it has to download a ~5GiB docker image and ~5GiB of models
 
