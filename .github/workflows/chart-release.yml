@@ -26,7 +26,15 @@ jobs:
         with:
           version: v3.8.1
 
+      - name: Package Chart
+        run: helm package charts/*
+
+      - name: Update index.yaml
+        run: helm repo index --url https://matemalice.github.io/stable-diffusion-k8s/ .
+
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.4.0
+        with:
+          charts_dir: charts/
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
