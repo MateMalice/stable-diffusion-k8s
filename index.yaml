@@ -1,0 +1,15 @@
+apiVersion: v1
+entries:
+  stable-diffusion:
+  - apiVersion: v2
+    appVersion: 1.4.0
+    created: "2023-11-26T06:40:31.49010346Z"
+    description: Packaged Stable Diffusion with a companion UI and automatic model
+      retrieval - http://github.com/MateMalice/stable-diffusion-k8s
+    digest: b3fec6fa9722da681ef479820bdd7e48cbecaffede47bd6c59f4cdf0c42bb31c
+    name: stable-diffusion
+    type: application
+    urls:
+    - https://github.com/MateMalice/stable-diffusion-k8s/releases/download/stable-diffusion-1.1.0/stable-diffusion-1.1.0.tgz
+    version: 1.1.0
+generated: "2023-11-26T06:40:31.490117787Z"
